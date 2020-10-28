@@ -15,6 +15,38 @@ var allChar = [symbolChar, numberChar, lowerChar, upperChar]
 
 
 function writePassword() {
+
+  var wantPass = confirm("Would you like to generate a random password?");
+  if (wantPass === true) {
+  }
+
+  var passChar = prompt("How many characters would you like your password?");
+  for (passChar === false; passChar < 8 || passChar > 128; passChar++) {
+    // if (passChar < 8 || passChar > 128) {
+    alert("Needs between 8-128 characters");
+    var passChar = prompt("How many characters would you like your password?");
+  }
+
+
+
+  passSymbolChar = confirm("Click OK to confirm including specialized characters.");
+  passLowerChar = confirm("Click OK to confirm including lowercase characters.");
+  passUpperChar = confirm("Click OK to confirm including uppercase characters.");
+  passNumberChar = confirm("Click OK to confirm including number characters.");
+
+  var Char = [passSymbolChar, passLowerChar, passUpperChar, passNumberChar]
+  for (Char === false; !passSymbolChar && !passLowerChar && !passUpperChar && !passNumberChar; Char++) {
+    alert("At least one type of characteristic should be choosen")
+    passSymbolChar = confirm("Click OK to confirm including specialized characters.");
+    passLowerChar = confirm("Click OK to confirm including lowercase characters.");
+    passUpperChar = confirm("Click OK to confirm including uppercase characters.");
+    passNumberChar = confirm("Click OK to confirm including number characters.");
+  }
+
+
+  for (var i = 0; i < passChar.length; i++) {
+    var pass = Math.floor(Math.random() * passChar.length);
+  }
   var password = generatePassword();
   var passwordText = document.querySelector("#password");
 
@@ -27,35 +59,36 @@ function writePassword() {
 generateBtn.addEventListener("click", writePassword);
 
 
-var wantPass = confirm("Would you like to generate a random password?");
-if (wantPass === true) {
-}
+// var wantPass = confirm("Would you like to generate a random password?");
+// if (wantPass === true) {
+// }
 
-var passChar = prompt("How many characters would you like your password?");
-for (passChar === false; passChar < 8 || passChar > 128; passChar++) {
-  // if (passChar < 8 || passChar > 128) {
-  alert("Needs between 8-128 characters");
-  var passChar = prompt("How many characters would you like your password?");
-}
-
-
-
-passSymbolChar = confirm("Click OK to confirm including specialized characters.");
-passLowerChar = confirm("Click OK to confirm including lowercase characters.");
-passUpperChar = confirm("Click OK to confirm including uppercase characters.");
-passNumberChar = confirm("Click OK to confirm including number characters.");
-
-var Char = [passSymbolChar, passLowerChar, passUpperChar, passNumberChar]
-for (Char === false; !passSymbolChar && !passLowerChar && !passUpperChar && !passNumberChar; Char++) {
-  alert("At least one type of characteristic should be choosen")
-  passSymbolChar = confirm("Click OK to confirm including specialized characters.");
-  passLowerChar = confirm("Click OK to confirm including lowercase characters.");
-  passUpperChar = confirm("Click OK to confirm including uppercase characters.");
-  passNumberChar = confirm("Click OK to confirm including number characters.");
-}
+// var passChar = prompt("How many characters would you like your password?");
+// for (passChar === false; passChar < 8 || passChar > 128; passChar++) {
+//   // if (passChar < 8 || passChar > 128) {
+//   alert("Needs between 8-128 characters");
+//   var passChar = prompt("How many characters would you like your password?");
+// }
 
 
-for (var i = 0; i < passChar.length; i++) {
-  var pass = Math.floor(Math.random() * passChar.length);
-}
+
+// passSymbolChar = confirm("Click OK to confirm including specialized characters.");
+// passLowerChar = confirm("Click OK to confirm including lowercase characters.");
+// passUpperChar = confirm("Click OK to confirm including uppercase characters.");
+// passNumberChar = confirm("Click OK to confirm including number characters.");
+
+// var Char = [passSymbolChar, passLowerChar, passUpperChar, passNumberChar]
+// for (Char === false; !passSymbolChar && !passLowerChar && !passUpperChar && !passNumberChar; Char++) {
+//   alert("At least one type of characteristic should be choosen")
+//   passSymbolChar = confirm("Click OK to confirm including specialized characters.");
+//   passLowerChar = confirm("Click OK to confirm including lowercase characters.");
+//   passUpperChar = confirm("Click OK to confirm including uppercase characters.");
+//   passNumberChar = confirm("Click OK to confirm including number characters.");
+// }
+
+
+// for (var i = 0; i < passChar.length; i++) {
+//   var pass = Math.floor(Math.random() * passChar.length);
+// }
+
 
